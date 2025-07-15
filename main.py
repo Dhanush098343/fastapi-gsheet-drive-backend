@@ -16,7 +16,7 @@ from google.oauth2.credentials import Credentials
 import json
 
 def get_credentials():
-    with open("token.json", "r") as token_file:
+    with open("/etc/secrets/token.json", "r") as token_file:
         token_info = json.load(token_file)
     creds = Credentials.from_authorized_user_info(token_info)
     return creds
